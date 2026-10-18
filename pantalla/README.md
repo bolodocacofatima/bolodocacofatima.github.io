@@ -7,9 +7,10 @@ juntos; los dos chorizos juntos; las dos espetadas juntas; el de Nutella; el
 bolo de mel con las broas; el chorizo por kilo con la margarina; y el cierre
 con el Instagram.
 
-Las banderas también quedan fijas arriba a la derecha, haciendo pareja con
-el logo de la izquierda, salvo en la pantalla de Fátima, donde ya salen en
-grande.
+La Virgen y las banderas también quedan fijas arriba a la derecha, haciendo
+pareja con el logo de la izquierda, en todas las pantallas salvo la de
+Fátima, donde ya salen en grande. La Virgen de la esquina va en negro sobre
+las pantallas claras y en crema sobre las oscuras (portada y cierre).
 
 El evento del día **no sale aquí**, aunque sí esté en el menú del QR: son
 dos interruptores distintos a propósito. Para que aparezca también en el

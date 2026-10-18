@@ -14,6 +14,8 @@
 | `espetada-cochino.*` | Espetada de Cochino |
 | `virgen-fatima.svg` | Nuestra Señora de Fátima, en vector y en el negro del menú. Vectorizada a partir de un bordado: no se pixela a ningún tamaño |
 | `virgen-fatima-crema.svg` | La misma en crema, para el modo oscuro del móvil |
+| `virgen-fatima.png` | La grande del televisor, en PNG con medidas fijas: algunos navegadores de televisor no dibujaban el SVG |
+| `virgen-fatima-mini.png` / `virgen-fatima-mini-crema.png` | La de la esquina del televisor (68 × 96, al doble de resolución), en negro y en crema |
 | `bandera-portugal.png` | Bandera de Portugal, 600 × 400 |
 | `bandera-madeira.png` | Bandera de Madeira, 600 × 400 |
 | `og-cover.jpg` | Vista previa al compartir el enlace (1200 × 630) |

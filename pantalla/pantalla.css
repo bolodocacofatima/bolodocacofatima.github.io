@@ -226,9 +226,15 @@ img{display:block}
 .completa--oculto{opacity:0;pointer-events:none}
 
 /* ---------- banderas fijas, arriba a la derecha ---------- */
-.banderas{position:absolute;right:56px;top:52px;z-index:5;display:flex;gap:14px}
+.banderas{position:absolute;right:56px;top:34px;z-index:5;display:flex;align-items:center;gap:14px}
 .banderas img{width:90px;height:60px;border-radius:7px;object-fit:cover;
   box-shadow:0 0 0 1px rgb(34 29 26 / .12), 0 8px 18px -8px rgb(0 0 0 / .45)}
+/* medidas fijas, igual que la grande: sin ellas algunos televisores la
+   dibujaban con ancho cero */
+.banderas__virgen{position:relative;width:68px;height:96px;margin-right:12px}
+.banderas .banderas__virgen img{position:absolute;left:0;top:0;width:68px;height:96px;
+  border-radius:0;box-shadow:none;object-fit:contain}
+#virgenCrema{opacity:0}
 
 /* ---------- barra de avance ---------- */
 .progreso{position:absolute;left:0;right:0;bottom:0;height:6px;

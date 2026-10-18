@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="version" content="2026-10-18.1">
+<meta name="version" content="2026-10-18.2">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bolo do Caco Fátima — Pantalla</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="pantalla.css?v=2026-10-18.1">
+<link rel="stylesheet" href="pantalla.css?v=2026-10-18.2">
 </head>
 <body>
 
@@ -25,8 +25,14 @@
     </span>
   </div>
 
-  <!-- las dos banderas, fijas arriba a la derecha: equilibran la firma de la izquierda -->
+  <!-- la Virgen y las dos banderas, fijas arriba a la derecha: equilibran la
+       firma de la izquierda. La Virgen va en negro sobre fondo claro y en crema
+       sobre las diapositivas oscuras; el reloj funde una con otra. -->
   <div class="banderas" id="banderas">
+    <span class="banderas__virgen">
+      <img id="virgenNegra" src="../assets/img/virgen-fatima-mini.png" alt="Nossa Senhora de Fátima" width="68" height="96">
+      <img id="virgenCrema" src="../assets/img/virgen-fatima-mini-crema.png" alt="" width="68" height="96">
+    </span>
     <img src="../assets/img/bandera-portugal.png" alt="Portugal" width="600" height="400">
     <img src="../assets/img/bandera-madeira.png" alt="Madeira" width="600" height="400">
   </div>
@@ -34,7 +40,7 @@
   <div class="progreso"><span class="progreso__barra" id="progresoBarra"></span></div>
 </div>
 
-<script src="../data/menu.js?v=2026-10-18.1"></script>
-<script src="pantalla.js?v=2026-10-18.1"></script>
+<script src="../data/menu.js?v=2026-10-18.2"></script>
+<script src="pantalla.js?v=2026-10-18.2"></script>
 </body>
 </html>

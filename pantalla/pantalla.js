@@ -277,6 +277,8 @@
   var TOTAL;
   var firma = document.getElementById('firma');
   var banderas = document.getElementById('banderas');
+  var virgenNegra = document.getElementById('virgenNegra');
+  var virgenCrema = document.getElementById('virgenCrema');
   var barra = document.getElementById('progresoBarra');
 
   function opacidad(a, dur) {
@@ -310,7 +312,7 @@
     /* la firma y las banderas se funden al mismo ritmo que las diapositivas
        que las llevan, en vez de con una transición propia que en el video
        saldría desacompasada */
-    var opFirma = 0, opBanderas = 0;
+    var opFirma = 0, opBanderas = 0, opCrema = 0;
 
     lista.forEach(function (d, i) {
       var a = fase(t0, d);
@@ -337,7 +339,10 @@
       d.nodo.style.opacity = op;
       if (op > mayor) { mayor = op; visible = i; }
       if (d.firma) opFirma += op;
-      if (d.banderas !== false) opBanderas += op;
+      if (d.banderas !== false) {
+        opBanderas += op;
+        if (d.oscura) opCrema += op;
+      }
 
       /* acercamiento de la foto: continuo de principio a fin, sin saltos */
       var avance = (a + FUNDIDO) / (d.dur + FUNDIDO);
@@ -357,6 +362,11 @@
     var d = lista[visible];
     firma.style.opacity = Math.min(1, opFirma).toFixed(3);
     banderas.style.opacity = Math.min(1, opBanderas).toFixed(3);
+    /* la Virgen de la esquina pasa de negro a crema al ritmo del cruce entre
+       una diapositiva clara y una oscura, sin cambiar de golpe */
+    var crema = opBanderas > 0 ? Math.min(1, opCrema / opBanderas) : 0;
+    virgenCrema.style.opacity = crema.toFixed(3);
+    virgenNegra.style.opacity = (1 - crema).toFixed(3);
     firma.classList.toggle('firma--sobre-oscuro', !!d.oscura);
     barra.style.width = (t0 / TOTAL * 100).toFixed(3) + '%';
   }
@@ -404,6 +414,8 @@
             return '../assets/img/' + f.replace(/\.[^.]+$/, '') + '.' + usa;
           });
         fotos.push('../assets/img/virgen-fatima.png',
+                   '../assets/img/virgen-fatima-mini.png',
+                   '../assets/img/virgen-fatima-mini-crema.png',
                    '../assets/img/bandera-portugal.png',
                    '../assets/img/bandera-madeira.png');
         fotos.forEach(function (url) {

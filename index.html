@@ -81,6 +81,10 @@
       </g>
     </svg>
     <div class="hero__inner">
+      <div class="hero__banderas">
+        <img src="assets/img/bandera-portugal.png" alt="Portugal" width="600" height="400">
+        <img src="assets/img/bandera-madeira.png" alt="Madeira" width="600" height="400">
+      </div>
       <p class="hero__kicker" data-i18n="site.kicker">Madeira · Venezuela</p>
       <h1 class="hero__title">
         <span class="hero__title-small">O rei da casa</span>
@@ -121,6 +125,12 @@
 <!-- ============ PIE ============ -->
 <footer class="footer">
   <div class="wrap">
+    <!-- Nuestra Señora de Fátima, que da nombre a la casa. En modo oscuro se
+         pinta en crema para que no desaparezca sobre el fondo. -->
+    <picture class="footer__virgen">
+      <source srcset="assets/img/virgen-fatima-crema.svg" media="(prefers-color-scheme: dark)">
+      <img src="assets/img/virgen-fatima.svg" alt="Nossa Senhora de Fátima" width="357" height="504" loading="lazy">
+    </picture>
     <p class="footer__brand">Bolo do Caco Fátima, C.A.</p>
     <a class="footer__ig" id="footerIg" href="#" target="_blank" rel="noopener"></a>
     <p class="footer__note" data-i18n="ui.priceNote">Precios en dólares</p>

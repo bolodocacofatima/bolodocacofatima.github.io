@@ -1,9 +1,14 @@
 # Pantalla del stand
 
-Bucle de 57 segundos en 16:9 para el televisor del stand. Nueve pantallas:
-portada, el bolo solo, la promoción de dos, el de margarina de ajo, los dos
-chorizos juntos, el de Nutella, el bolo de mel con las broas, el chorizo por
-kilo con la margarina, y el cierre con el Instagram.
+Bucle de 64 segundos en 16:9 para el televisor del stand. Diez pantallas:
+portada; Fátima, con la Virgen y las banderas de Portugal y de Madeira; el
+bolo solo; la promoción de dos; el de margarina de ajo; los dos chorizos
+juntos; el de Nutella; el bolo de mel con las broas; el chorizo por kilo con
+la margarina; y el cierre con el Instagram.
+
+Las banderas también quedan fijas arriba a la derecha, haciendo pareja con
+el logo de la izquierda, salvo en la pantalla de Fátima, donde ya salen en
+grande.
 
 El evento del día **no sale aquí**, aunque sí esté en el menú del QR: son
 dos interruptores distintos a propósito. Para que aparezca también en el

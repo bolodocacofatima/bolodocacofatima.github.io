@@ -210,6 +210,9 @@ a{color:var(--c-azulejo)}
     linear-gradient(to top,rgb(23 19 15 / .96) 0%,rgb(23 19 15 / .74) 36%,rgb(23 19 15 / .34) 66%,rgb(23 19 15 / .62) 100%);
 }
 .hero__inner{grid-row:1;align-self:end;text-align:center;padding:0 1.25rem 2.5rem}
+.hero__banderas{display:flex;justify-content:center;gap:.5rem;margin-bottom:.9rem}
+.hero__banderas img{width:2.1rem;height:1.4rem;border-radius:.2rem;object-fit:cover;
+  box-shadow:0 0 0 1px rgb(250 246 238 / .28), 0 3px 10px -2px rgb(0 0 0 / .55)}
 .hero__kicker{
   font-size:.66rem;text-transform:uppercase;letter-spacing:.28em;
   color:var(--c-codea);margin-bottom:1rem;
@@ -490,6 +493,8 @@ a{color:var(--c-azulejo)}
 
 /* ---------- 14. Pie ---------- */
 .footer{padding:2.5rem 0 6rem;text-align:center}
+.footer__virgen{display:block}
+.footer__virgen img{display:block;height:5.5rem;width:auto;margin:0 auto 1.1rem;opacity:.92}
 .footer__brand{font-family:var(--f-display);font-weight:700;font-size:.95rem}
 .footer__ig{
   display:inline-flex;align-items:center;gap:.45rem;

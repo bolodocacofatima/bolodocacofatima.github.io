@@ -8,6 +8,10 @@
 | `bolo-natural.*` | Bolo do Caco Grande |
 | `bolo-montserratina.*` | Bolo do Caco con Chorizo Ahumado Montserratina — **foto real del producto**, recortada del fondo y montada sobre mantel limpio |
 | `bolo-portugues.*` | Bolo do Caco con Chorizo Portugués |
+| `virgen-fatima.svg` | Nuestra Señora de Fátima, en vector y en el negro del menú. Vectorizada a partir de un bordado: no se pixela a ningún tamaño |
+| `virgen-fatima-crema.svg` | La misma en crema, para el modo oscuro del móvil |
+| `bandera-portugal.png` | Bandera de Portugal, 600 × 400 |
+| `bandera-madeira.png` | Bandera de Madeira, 600 × 400 |
 | `og-cover.jpg` | Vista previa al compartir el enlace (1200 × 630) |
 | `logo.png` | Logo maestro, 1200 px, fondo transparente |
 | `logo-256.png` | Logo de la cabecera y del icono de la app |

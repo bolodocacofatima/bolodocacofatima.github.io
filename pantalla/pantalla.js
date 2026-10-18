@@ -21,6 +21,7 @@
      porque hay más que leer. */
   var DURACION = {
     portada: 5.5,
+    fatima: 6.5,
     producto: 6.0,
     pareja: 7.5,
     evento: 9.0,
@@ -92,6 +93,33 @@
             '<h1 class="portada__titulo">Bolo do Caco</h1>' +
             '<span class="filete filete--centro"></span>' +
             '<p class="portada__lema">' + esc(t(DATA.site.tagline)) + '</p>' +
+          '</div>' +
+        '</div>'
+    };
+  }
+
+  /* Identidad de la casa: Nuestra Señora de Fátima, que da nombre al negocio,
+     junto a las banderas de Portugal y de Madeira. Va justo después de la
+     portada, antes de los productos. */
+  function fatima() {
+    return {
+      dur: DURACION.fatima,
+      oscura: false,
+      firma: true,
+      banderas: false,          // aquí van en grande: la esquina sobraría
+      html:
+        '<div class="dia dia--fatima">' +
+          '<div class="fat__luz"></div>' +
+          '<div class="fat__virgen"><img src="../assets/img/virgen-fatima.svg" alt="Nossa Senhora de Fátima" data-kb></div>' +
+          '<div class="fat__caja" data-entra>' +
+            '<p class="prod__categoria">Bolo do Caco</p>' +
+            '<h2 class="fat__titulo">Fátima</h2>' +
+            '<span class="filete filete--terracota"></span>' +
+            '<div class="fat__banderas">' +
+              '<figure><img src="../assets/img/bandera-portugal.png" alt=""><figcaption>Portugal</figcaption></figure>' +
+              '<figure><img src="../assets/img/bandera-madeira.png" alt=""><figcaption>Madeira</figcaption></figure>' +
+            '</div>' +
+            '<p class="fat__lema">' + esc(t(DATA.site.tagline)) + '</p>' +
           '</div>' +
         '</div>'
     };
@@ -198,6 +226,7 @@
 
   function construir() {
     lista.push(portada());
+    lista.push(fatima());
 
     var yaPuesto = {};
     DATA.categories.forEach(function (cat) {
@@ -245,6 +274,7 @@
 
   var TOTAL;
   var firma = document.getElementById('firma');
+  var banderas = document.getElementById('banderas');
   var barra = document.getElementById('progresoBarra');
 
   function opacidad(a, dur) {
@@ -275,6 +305,10 @@
   function pintar(tiempo) {
     var t0 = ((tiempo % TOTAL) + TOTAL) % TOTAL;
     var visible = 0, mayor = -1;
+    /* la firma y las banderas se funden al mismo ritmo que las diapositivas
+       que las llevan, en vez de con una transición propia que en el video
+       saldría desacompasada */
+    var opFirma = 0, opBanderas = 0;
 
     lista.forEach(function (d, i) {
       var a = fase(t0, d);
@@ -300,6 +334,8 @@
       var op = opacidad(a, d.dur);
       d.nodo.style.opacity = op;
       if (op > mayor) { mayor = op; visible = i; }
+      if (d.firma) opFirma += op;
+      if (d.banderas !== false) opBanderas += op;
 
       /* acercamiento de la foto: continuo de principio a fin, sin saltos */
       var avance = (a + FUNDIDO) / (d.dur + FUNDIDO);
@@ -317,7 +353,8 @@
     });
 
     var d = lista[visible];
-    firma.classList.toggle('firma--oculta', !d.firma);
+    firma.style.opacity = Math.min(1, opFirma).toFixed(3);
+    banderas.style.opacity = Math.min(1, opBanderas).toFixed(3);
     firma.classList.toggle('firma--sobre-oscuro', !!d.oscura);
     barra.style.width = (t0 / TOTAL * 100).toFixed(3) + '%';
   }
@@ -364,6 +401,9 @@
             var usa = formatos.indexOf(ext) > -1 ? ext : 'jpg';
             return '../assets/img/' + f.replace(/\.[^.]+$/, '') + '.' + usa;
           });
+        fotos.push('../assets/img/virgen-fatima.svg',
+                   '../assets/img/bandera-portugal.png',
+                   '../assets/img/bandera-madeira.png');
         fotos.forEach(function (url) {
           var i = new Image();
           i.src = url;

@@ -138,8 +138,8 @@
         '<div class="dia dia--producto">' +
           '<div class="prod__marco">' +
             '<div class="prod__foto" data-kb style="background-image:' + fondo(p.image) + '"></div>' +
-            '<div class="prod__borde"></div>' +
           '</div>' +
+          '<div class="prod__borde"></div>' +
           '<div class="prod__caja" data-entra>' +
             '<p class="prod__categoria">' + esc(t(categoria.name)) + '</p>' +
             '<h2 class="prod__nombre">' + esc(t(p.name)) + '</h2>' +

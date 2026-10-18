@@ -8,6 +8,10 @@
 | `bolo-natural.*` | Bolo do Caco Grande |
 | `bolo-montserratina.*` | Bolo do Caco con Chorizo Ahumado Montserratina — **foto real del producto**, recortada del fondo y montada sobre mantel limpio |
 | `bolo-portugues.*` | Bolo do Caco con Chorizo Portugués |
+| `prego.*` | Prego en Bolo do Caco |
+| `bifana.*` | Bifana en Bolo do Caco |
+| `espetada-carne.*` | Espetada de Carne |
+| `espetada-cochino.*` | Espetada de Cochino |
 | `virgen-fatima.svg` | Nuestra Señora de Fátima, en vector y en el negro del menú. Vectorizada a partir de un bordado: no se pixela a ningún tamaño |
 | `virgen-fatima-crema.svg` | La misma en crema, para el modo oscuro del móvil |
 | `bandera-portugal.png` | Bandera de Portugal, 600 × 400 |

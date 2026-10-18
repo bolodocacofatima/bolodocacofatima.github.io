@@ -48,6 +48,15 @@ window.MENU = {
       }
     },
     {
+      id: "espetadas",
+      name:    { es: "Espetadas", pt: "Espetadas" },
+      kicker:  { es: "Al estilo de Madeira", pt: "À moda da Madeira" },
+      tagline: {
+        es: "Carne en espeto, como se hace en la isla.",
+        pt: "Carne no espeto, como se faz na ilha."
+      }
+    },
+    {
       id: "docaria",
       name:    { es: "Doçaria",  pt: "Doçaria" },
       kicker:  { es: "Dulces de la casa", pt: "Doces da casa" },
@@ -128,6 +137,38 @@ window.MENU = {
       }
     },
     {
+      id: "prego",
+      category: "bolo-do-caco",
+      price: 7,
+      badges: [],
+      image: { file: "prego.jpg", formats: ["avif", "webp"] },
+      name: { es: "Prego en Bolo do Caco", pt: "Prego no Bolo do Caco" },
+      short: {
+        es: "El clásico portugués de filete de res.",
+        pt: "O clássico português de bife de vaca."
+      },
+      long: {
+        es: "Filete de res en lonjas dentro de nuestro bolo do caco recién hecho. El prego de toda la vida, como se come en Madeira.",
+        pt: "Bife de vaca às fatias dentro do nosso bolo do caco acabado de fazer. O prego de sempre, como se come na Madeira."
+      }
+    },
+    {
+      id: "bifana",
+      category: "bolo-do-caco",
+      price: 9,
+      badges: [],
+      image: { file: "bifana.jpg", formats: ["avif", "webp"] },
+      name: { es: "Bifana en Bolo do Caco", pt: "Bifana no Bolo do Caco" },
+      short: {
+        es: "Cerdo en su salsa, dentro del bolo.",
+        pt: "Porco no seu molho, dentro do bolo."
+      },
+      long: {
+        es: "Lonjas finas de cerdo en su salsa, dentro de nuestro bolo do caco recién hecho. La bifana de las fiestas portuguesas.",
+        pt: "Fatias finas de porco no seu molho, dentro do nosso bolo do caco acabado de fazer. A bifana das festas portuguesas."
+      }
+    },
+    {
       id: "bolo-montserratina",
       category: "bolo-do-caco",
       price: 10,
@@ -163,6 +204,40 @@ window.MENU = {
       long: {
         es: "Chorizo portugués en lonchas gruesas dentro del bolo do caco recién hecho. Sabor a fiesta de romaria.",
         pt: "Chouriço português em fatias grossas dentro do bolo do caco acabado de fazer. Sabor a festa de romaria."
+      }
+    },
+
+    /* ---- Espetadas ---- */
+    {
+      id: "espetada-carne",
+      category: "espetadas",
+      price: 17,
+      badges: ["tradicional"],
+      image: { file: "espetada-carne.jpg", formats: ["avif", "webp"] },
+      name: { es: "Espetada de Carne", pt: "Espetada de Carne" },
+      short: {
+        es: "Carne de res en espeto, como en Madeira.",
+        pt: "Carne de vaca no espeto, como na Madeira."
+      },
+      long: {
+        es: "El plato más típico de Madeira: trozos de carne de res ensartados en el espeto y asados.",
+        pt: "O prato mais típico da Madeira: pedaços de carne de vaca enfiados no espeto e assados."
+      }
+    },
+    {
+      id: "espetada-cochino",
+      category: "espetadas",
+      price: 14,
+      badges: [],
+      image: { file: "espetada-cochino.jpg", formats: ["avif", "webp"] },
+      name: { es: "Espetada de Cochino", pt: "Espetada de Porco" },
+      short: {
+        es: "Trozos de cochino en espeto.",
+        pt: "Pedaços de porco no espeto."
+      },
+      long: {
+        es: "La misma espetada madeirense, con trozos de cochino ensartados en el espeto y asados.",
+        pt: "A mesma espetada madeirense, com pedaços de porco enfiados no espeto e assados."
       }
     },
 

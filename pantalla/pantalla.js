@@ -35,7 +35,9 @@
   /* Productos que comparten diapositiva. El menú del QR los sigue mostrando
      por separado: esto es solo cómo se agrupan en la pantalla del stand. */
   var PAREJAS = [
+    ['prego', 'bifana'],
     ['bolo-montserratina', 'bolo-portugues'],
+    ['espetada-carne', 'espetada-cochino'],
     ['bolo-de-mel', 'broas'],
     ['chorizo-kilo', 'margarina-ajo']
   ];

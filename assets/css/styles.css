@@ -409,6 +409,9 @@ a{color:var(--c-azulejo)}
 .badge--tradicional{background:transparent;color:var(--c-azulejo);border-color:var(--c-azulejo)}
 .badge--vegetariano{background:transparent;color:var(--c-louro);border-color:var(--c-louro)}
 .bolo__badges{position:absolute;left:.75rem;top:.75rem}
+/* sobre la foto, las de contorno llevan fondo para leerse en cualquier imagen */
+.bolo__badges .badge--tradicional,
+.bolo__badges .badge--vegetariano{background:var(--c-surface)}
 
 /* ---------- 11. Tira narrativa ---------- */
 .story{

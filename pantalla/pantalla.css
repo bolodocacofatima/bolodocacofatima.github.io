@@ -149,6 +149,9 @@ img{display:block}
   box-shadow:0 3px 10px rgb(34 29 26 / .10), 0 26px 50px -24px rgb(34 29 26 / .40)}
 .par__foto{position:absolute;inset:-4%;background-size:cover;background-position:center;
   will-change:transform}
+/* sobre la foto, la de contorno necesita fondo: sin él no se lee encima de
+   una carne roja o un pan oscuro */
+.par__sello.sello--tradicional{background:var(--c-surface)}
 .par__sello{position:absolute;left:22px;top:22px;
   padding:11px 26px;border-radius:999px;
   font-size:23px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}

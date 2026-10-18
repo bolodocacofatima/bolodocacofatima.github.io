@@ -112,7 +112,7 @@
       html:
         '<div class="dia dia--fatima">' +
           '<div class="fat__luz"></div>' +
-          '<div class="fat__virgen"><img src="../assets/img/virgen-fatima.svg" alt="Nossa Senhora de Fátima" data-kb></div>' +
+          '<div class="fat__virgen"><img src="../assets/img/virgen-fatima.png" alt="Nossa Senhora de Fátima" width="560" height="790" data-kb></div>' +
           '<div class="fat__caja" data-entra>' +
             '<p class="prod__categoria">Bolo do Caco</p>' +
             '<h2 class="fat__titulo">Fátima</h2>' +
@@ -403,7 +403,7 @@
             var usa = formatos.indexOf(ext) > -1 ? ext : 'jpg';
             return '../assets/img/' + f.replace(/\.[^.]+$/, '') + '.' + usa;
           });
-        fotos.push('../assets/img/virgen-fatima.svg',
+        fotos.push('../assets/img/virgen-fatima.png',
                    '../assets/img/bandera-portugal.png',
                    '../assets/img/bandera-madeira.png');
         fotos.forEach(function (url) {
@@ -440,7 +440,11 @@
     var b = document.createElement('button');
     b.className = 'completa';
     b.type = 'button';
-    b.textContent = 'Pantalla completa';
+    var meta = document.querySelector('meta[name="version"]');
+    /* la versión cargada sale bajo el botón: si algo no aparece en el
+       televisor, dice al momento si tiene la última o una copia vieja */
+    b.innerHTML = 'Pantalla completa' +
+      (meta && meta.content ? '<small>versión ' + meta.content + '</small>' : '');
     b.addEventListener('click', function () {
       var d = document.documentElement;
       if (document.fullscreenElement) {

@@ -39,6 +39,21 @@ además que la pantalla no se apague mientras corre el bucle.
 Una vez cargada no necesita internet: todo queda descargado y el bucle sigue
 aunque se caiga la conexión.
 
+## Si algo nuevo no aparece en el televisor
+
+Pulsa cualquier tecla del control: junto al botón de pantalla completa sale
+la **versión** que tiene cargada. Si no coincide con la última, el televisor
+está usando una copia vieja: recarga la página, y si sigue igual, espera diez
+minutos (lo que tarda GitHub en dejar de servir la anterior) y vuelve a
+recargar.
+
+Cada vez que se cambia algo hay que subir la versión, para que los navegadores
+no mezclen archivos nuevos con viejos:
+
+```bash
+python3 tools/subir-version.py
+```
+
 ## Cuando cambien los precios
 
 La página se actualiza sola. **El video no**: hay que volver a generarlo.

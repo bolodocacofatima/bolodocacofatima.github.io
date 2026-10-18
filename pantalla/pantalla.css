@@ -92,7 +92,9 @@ img{display:block}
   radial-gradient(38% 62% at 25% 52%, rgb(255 252 247 / .95) 0%, rgb(255 252 247 / 0) 70%)}
 .fat__virgen{display:flex;justify-content:center;align-items:center;height:100%;
   padding:110px 0 80px 120px}
-.fat__virgen img{height:100%;max-height:790px;width:auto;will-change:transform}
+/* medidas fijas: con alto al 100% y ancho automático, algunos navegadores de
+   televisor dibujaban la imagen con ancho cero y la Virgen no se veía */
+.fat__virgen img{display:block;width:560px;height:790px;will-change:transform}
 .fat__caja{display:flex;flex-direction:column;align-items:flex-start;padding:0 120px 0 40px}
 .fat__titulo{font-family:var(--f-display);font-size:220px;font-weight:700;line-height:.92;
   letter-spacing:-.035em;font-variation-settings:"SOFT" 60,"WONK" 1,"opsz" 144;margin-top:6px}
@@ -218,6 +220,8 @@ img{display:block}
   backdrop-filter:blur(6px);
   transition:opacity .4s ease;
 }
+.completa small{display:block;font-size:14px;font-weight:500;opacity:.7;margin-top:4px;
+  letter-spacing:.02em}
 .completa:focus-visible{outline:3px solid var(--c-codea);outline-offset:3px}
 .completa--oculto{opacity:0;pointer-events:none}
 

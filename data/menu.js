@@ -113,8 +113,8 @@ window.MENU = {
         pt: "Leve dois e paga cinco dólares."
       },
       long: {
-        es: "Dos bolos do caco grandes por cinco dólares, en vez de seis. Para compartir en la mesa o llevarte uno a casa.",
-        pt: "Dois bolos do caco grandes por cinco dólares, em vez de seis. Para partilhar à mesa ou levar um para casa."
+        es: "Dos bolos do caco grandes por cinco dólares. Para compartir en la mesa o llevarte uno a casa.",
+        pt: "Dois bolos do caco grandes por cinco dólares. Para partilhar à mesa ou levar um para casa."
       }
     },
     {
@@ -160,12 +160,12 @@ window.MENU = {
       image: { file: "bifana.jpg", formats: ["avif", "webp"] },
       name: { es: "Bifana en Bolo do Caco", pt: "Bifana no Bolo do Caco" },
       short: {
-        es: "Cerdo en su salsa, dentro del bolo.",
-        pt: "Porco no seu molho, dentro do bolo."
+        es: "Lonjas de cerdo, dentro del bolo.",
+        pt: "Fatias de porco, dentro do bolo."
       },
       long: {
-        es: "Lonjas finas de cerdo en su salsa, dentro de nuestro bolo do caco recién hecho. La bifana de las fiestas portuguesas.",
-        pt: "Fatias finas de porco no seu molho, dentro do nosso bolo do caco acabado de fazer. A bifana das festas portuguesas."
+        es: "Lonjas de cerdo dentro de nuestro bolo do caco recién hecho. La bifana de las fiestas portuguesas.",
+        pt: "Fatias de porco dentro do nosso bolo do caco acabado de fazer. A bifana das festas portuguesas."
       }
     },
     {
@@ -359,7 +359,7 @@ window.MENU = {
          (también su pestaña en la barra de categorías).
      --------------------------------------------------------- */
   evento: {
-    active: true,           // false = desaparece del menú del QR
+    active: false,          // false = desaparece del menú del QR
     name:     { es: "A Vindima",  pt: "A Vindima" },
     subtitle: { es: "La fiesta de la vendimia portuguesa",
                 pt: "A festa das vindimas portuguesas" },

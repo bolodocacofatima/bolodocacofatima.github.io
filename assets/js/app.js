@@ -8,6 +8,9 @@
   var DATA = window.MENU;
   if (!DATA) { console.error('[menu] data/menu.js no se cargó'); return; }
 
+  /* los productos con hidden: true no se venden en este evento */
+  DATA.products = DATA.products.filter(function (p) { return !p.hidden; });
+
   var LANGS = ['es', 'pt'];
   var STORE_KEY = 'bdc.lang';
   var lang = readLang();
@@ -269,6 +272,44 @@
     sub.hidden = !t(ev.subtitle);
 
     document.getElementById('eventoText').textContent = t(ev.text);
+
+    /* logo de los invitados: cuadrado, se recorta en círculo con CSS */
+    var logo = document.getElementById('eventoLogo');
+    if (ev.logo) {
+      var file = typeof ev.logo === 'string' ? ev.logo : ev.logo.file;
+      var formats = (typeof ev.logo === 'string' ? [] : ev.logo.formats) || [];
+      var base = file.replace(/\.[^.]+$/, '');
+      logo.innerHTML = formats.map(function (f) {
+        return '<source type="image/' + esc(f) + '" srcset="assets/img/' + esc(base) + '.' + esc(f) + '">';
+      }).join('') +
+        '<img src="assets/img/' + esc(file) + '" alt="' + esc(t(ev.name)) + '" width="400" height="400" loading="lazy" decoding="async">';
+      logo.hidden = false;
+    } else {
+      logo.hidden = true;
+    }
+
+    /* nota firmada (aniversario, agradecimiento…) */
+    var note = document.getElementById('eventoNote');
+    if (ev.note && t(ev.note.text)) {
+      note.innerHTML =
+        (t(ev.note.title) ? '<p class="nota__titulo">' + esc(t(ev.note.title)) + '</p>' : '') +
+        '<p class="nota__texto">' + esc(t(ev.note.text)) + '</p>' +
+        (ev.note.signature ? '<p class="nota__firma">' + esc(t(ev.note.signature)) + '</p>' : '');
+      note.hidden = false;
+    } else {
+      note.hidden = true;
+    }
+
+    /* Instagram de los invitados */
+    var ig = document.getElementById('eventoIg');
+    if (ev.instagram) {
+      ig.href = 'https://instagram.com/' + encodeURIComponent(ev.instagram);
+      ig.innerHTML = ICON.instagram + '<span><small>' + esc(ui('eventoFollow')) + '</small>@' +
+        esc(ev.instagram) + '</span>';
+      ig.hidden = false;
+    } else {
+      ig.hidden = true;
+    }
 
     var facts = document.getElementById('eventoFacts');
     facts.innerHTML = '';

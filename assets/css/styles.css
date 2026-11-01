@@ -479,6 +479,46 @@ a{color:var(--c-azulejo)}
 }
 @media (min-width:36rem){.evento__text{text-align:center}}
 
+/* logo de los invitados: se recorta en círculo, con un canto fino */
+.evento__logo{display:block;width:7.5rem;height:7.5rem;margin:0 auto 1.25rem;
+  border-radius:50%;overflow:hidden;background:#F7F7F7;
+  box-shadow:0 0 0 1px var(--c-line), 0 10px 24px -12px rgb(34 29 26 / .45)}
+.evento__logo[hidden]{display:none}
+.evento__logo img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* nota firmada: papel claro con filete de corteza, como una tarjeta */
+.nota{
+  position:relative;max-width:30rem;margin:2rem auto 0;
+  padding:1.6rem 1.4rem 1.4rem;
+  background:var(--c-surface);border-radius:var(--r-lg);
+  border-top:3px solid var(--c-codea);box-shadow:var(--sh-1);
+  text-align:center;
+}
+.nota[hidden]{display:none}
+.nota__titulo{
+  font-family:var(--f-display);font-size:1.35rem;font-weight:700;line-height:1.15;
+  letter-spacing:-.01em;color:var(--c-terracota);text-wrap:balance;
+  font-variation-settings:"SOFT" 50,"WONK" 1,"opsz" 30;
+}
+.nota__texto{margin-top:.7rem;color:var(--c-ink-soft);text-wrap:pretty}
+.nota__firma{
+  margin-top:1rem;font-family:var(--f-display);font-style:italic;font-size:.95rem;
+  color:var(--c-ink);
+}
+.nota__firma::before{content:"— "}
+
+.evento__ig{
+  display:inline-flex;align-items:center;gap:.7rem;margin-top:1.5rem;
+  padding:.65rem 1.2rem .65rem 1rem;border-radius:999px;
+  border:1px solid var(--c-line);background:var(--c-surface);
+  color:var(--c-ink);text-decoration:none;text-align:left;font-weight:600;font-size:.95rem;
+}
+.evento__ig[hidden]{display:none}
+.evento__ig svg{width:1.4rem;height:1.4rem;color:var(--c-terracota);flex:none}
+.evento__ig small{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--c-ink-soft)}
+@media (hover:hover){.evento__ig:hover{border-color:var(--c-terracota)}}
+
 .facts{
   margin:2rem auto 0;padding:1.5rem 0 0;
   border-top:1px solid var(--c-line);

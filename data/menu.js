@@ -81,6 +81,10 @@ window.MENU = {
          price    → número, sin símbolo
          badges   → "estrella" | "mas-vendido" | "novedad" | "tradicional" | "vegetariano"
          image    → null, "archivo.jpg", ó { file:"archivo.jpg", formats:["avif","webp"] }
+         hidden   → true = no sale ni en el menú ni en el televisor (para los
+                    eventos en que no se vende). Para que vuelva, bórralo o
+                    pon false. Si una categoría se queda sin productos,
+                    desaparece sola con su pestaña.
      --------------------------------------------------------- */
   products: [
 
@@ -138,6 +142,7 @@ window.MENU = {
     },
     {
       id: "prego",
+      hidden: true,            // no se vende en el evento de Parceiros
       category: "bolo-do-caco",
       price: 7,
       badges: [],
@@ -154,6 +159,7 @@ window.MENU = {
     },
     {
       id: "bifana",
+      hidden: true,            // no se vende en el evento de Parceiros
       category: "bolo-do-caco",
       price: 9,
       badges: [],
@@ -210,6 +216,7 @@ window.MENU = {
     /* ---- Espetadas ---- */
     {
       id: "espetada-carne",
+      hidden: true,            // no se vende en el evento de Parceiros
       category: "espetadas",
       price: 17,
       badges: ["tradicional"],
@@ -226,6 +233,7 @@ window.MENU = {
     },
     {
       id: "espetada-cochino",
+      hidden: true,            // no se vende en el evento de Parceiros
       category: "espetadas",
       price: 14,
       badges: [],
@@ -359,25 +367,26 @@ window.MENU = {
          (también su pestaña en la barra de categorías).
      --------------------------------------------------------- */
   evento: {
-    active: false,          // false = desaparece del menú del QR
-    name:     { es: "A Vindima",  pt: "A Vindima" },
-    subtitle: { es: "La fiesta de la vendimia portuguesa",
-                pt: "A festa das vindimas portuguesas" },
+    active: true,           // false = desaparece del menú del QR
+    name:     { es: "Parceiros Banda Show",  pt: "Parceiros Banda Show" },
+    subtitle: { es: "Música portuguesa «à nossa maneira»",
+                pt: "Música portuguesa «à nossa maneira»" },
     text: {
-      es: "Entre finales de agosto y octubre, el Valle del Duero se llena de gente recogiendo la uva a mano y pisándola descalza en lagares de granito, como se ha hecho durante siglos. La vendimia se celebra con desfiles, fado en vivo y mesas largas que no se acaban. Hoy traemos aquí ese mismo espíritu: la fiesta del final de la cosecha, con el pan de la isla recién hecho.",
-      pt: "Entre o fim de agosto e outubro, o Vale do Douro enche-se de gente a apanhar a uva à mão e a pisá-la descalça em lagares de granito, como há séculos. A vindima festeja-se com desfiles, fado ao vivo e mesas compridas que não acabam. Hoje trazemos aqui esse mesmo espírito: a festa do fim da colheita, com o pão da ilha acabado de fazer."
+      es: "Hoy estamos aquí por invitación de Parceiros Banda Show, el grupo de música portuguesa que se define como «el puente musical que une dos tierras en un solo ritmo». Ellos ponen el acordeón, las voces y la mejor energía en vivo; nosotros, el bolo do caco recién hecho.",
+      pt: "Hoje estamos aqui a convite dos Parceiros Banda Show, o grupo de música portuguesa que se define como «a ponte musical que une duas terras num só ritmo». Eles põem o acordeão, as vozes e a melhor energia ao vivo; nós, o bolo do caco acabado de fazer."
     },
-    facts: [
-      { label: { es: "Cuándo",    pt: "Quando" },
-        value: { es: "De finales de agosto a octubre, con septiembre en su punto",
-                 pt: "Do fim de agosto a outubro, com setembro no auge" } },
-      { label: { es: "De dónde viene", pt: "De onde vem" },
-        value: { es: "El Valle del Duero, cuna del vino de Oporto",
-                 pt: "O Vale do Douro, berço do vinho do Porto" } },
-      { label: { es: "La tradición", pt: "A tradição" },
-        value: { es: "Pisar la uva en lagares de granito, al ritmo del acordeón",
-                 pt: "Pisar a uva em lagares de granito, ao ritmo do acordeão" } }
-    ]
+    /* opcionales: logo e Instagram de los invitados, y una nota firmada */
+    logo: { file: "parceiros-logo.jpg", formats: ["avif", "webp"] },
+    instagram: "parceirosbandashow",
+    note: {
+      title: { es: "¡Feliz 4.º aniversario!", pt: "Parabéns pelos 4 anos!" },
+      text: {
+        es: "Cuatro años haciendo sonar a Portugal en Venezuela merecen celebrarse a lo grande. Gracias, Parceiros, por invitarnos a ser parte de su fiesta: es un orgullo acompañar su música con nuestro bolo do caco. ¡Por muchos años más!",
+        pt: "Quatro anos a fazer soar Portugal na Venezuela merecem ser festejados em grande. Obrigado, Parceiros, pelo convite para fazer parte da vossa festa: é um orgulho acompanhar a vossa música com o nosso bolo do caco. Que venham muitos mais!"
+      },
+      signature: "Bolo do Caco Fátima"
+    },
+    facts: []
   },
 
   /* ---------------------------------------------------------
@@ -392,6 +401,7 @@ window.MENU = {
       close: "Cerrar",
       eventoKicker: "El evento de hoy",
       eventoChip: "El evento",
+      eventoFollow: "Síguelos en Instagram",
       orderAtStand: "Pídelo en nuestro stand",
       igLabel: "Síguenos en Instagram",
       follow: "Síguenos",
@@ -414,6 +424,7 @@ window.MENU = {
       close: "Fechar",
       eventoKicker: "O evento de hoje",
       eventoChip: "O evento",
+      eventoFollow: "Siga-os no Instagram",
       orderAtStand: "Peça no nosso stand",
       igLabel: "Siga-nos no Instagram",
       follow: "Siga-nos",

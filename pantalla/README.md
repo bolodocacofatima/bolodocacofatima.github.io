@@ -1,11 +1,15 @@
 # Pantalla del stand
 
-Bucle de 79 segundos en 16:9 para el televisor del stand. Doce pantallas:
-portada; Fátima, con la Virgen y las banderas de Portugal y de Madeira; el
-bolo solo; la promoción de dos; el de margarina de ajo; prego y bifana
-juntos; los dos chorizos juntos; las dos espetadas juntas; el de Nutella; el
-bolo de mel con las broas; el chorizo por kilo con la margarina; y el cierre
-con el Instagram.
+Bucle en 16:9 para el televisor del stand. Ahora mismo son diez pantallas y
+64 segundos: portada; Fátima, con la Virgen y las banderas de Portugal y de
+Madeira; el bolo solo; la promoción de dos; el de margarina de ajo; los dos
+chorizos juntos; el de Nutella; el bolo de mel con las broas; el chorizo por
+kilo con la margarina; y el cierre con el Instagram.
+
+Los productos marcados con `hidden: true` en `data/menu.js` (hoy: prego,
+bifana y las dos espetadas) no salen ni aquí ni en el menú del QR. Al
+quitarles la marca vuelven solos, cada uno con su pareja: prego con bifana,
+y las dos espetadas juntas.
 
 La Virgen y las banderas también quedan fijas arriba a la derecha, haciendo
 pareja con el logo de la izquierda, en todas las pantallas salvo la de

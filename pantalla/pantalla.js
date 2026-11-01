@@ -13,6 +13,10 @@
   var DATA = window.MENU;
   if (!DATA) { console.error('[pantalla] falta data/menu.js'); return; }
 
+  /* los productos con hidden: true no se venden en este evento: fuera
+     también de la pantalla (si era media pareja, el otro sale solo) */
+  DATA.products = DATA.products.filter(function (p) { return !p.hidden; });
+
   var LANG = 'es';          // idioma de la pantalla del stand
   var FUNDIDO = 0.9;        // segundos de cruce entre una y la siguiente
   var PREPARA = 1.0;        // segundos de antelación con que se prepara la siguiente

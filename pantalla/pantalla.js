@@ -28,13 +28,15 @@
     fatima: 6.5,
     producto: 6.0,
     pareja: 7.5,
-    evento: 9.0,
+    evento: 12.0,           // el agradecimiento lleva una nota que hay que poder leer
     cierre: 5.5
   };
 
   /* ¿Sale el evento del día en la pantalla del stand? Es independiente del
-     menú del QR: allí se controla con evento.active en data/menu.js. */
-  var MOSTRAR_EVENTO = false;
+     menú del QR: allí se controla con evento.active en data/menu.js.
+     Si el evento trae nota (evento.note), la pantalla es la de agradecimiento,
+     con el logo de los invitados. */
+  var MOSTRAR_EVENTO = true;
 
   /* Productos que comparten diapositiva. El menú del QR los sigue mostrando
      por separado: esto es solo cómo se agrupan en la pantalla del stand. */
@@ -46,7 +48,7 @@
     ['chorizo-kilo', 'margarina-ajo']
   ];
 
-  function t(o) { return o ? (o[LANG] || o.es || '') : ''; }
+  function t(o) { return !o ? '' : typeof o === 'string' ? o : (o[LANG] || o.es || ''); }
   function ui(k) { return DATA.ui[LANG][k] || DATA.ui.es[k] || ''; }
   function dinero(n) {
     var c = DATA.site.currency || '$';
@@ -187,8 +189,36 @@
     };
   }
 
+  /* Agradecimiento a quien nos invita: su logo en grande y la nota firmada */
+  function gracias(ev) {
+    var nota = ev.note;
+    return {
+      dur: DURACION.evento,
+      oscura: false,
+      firma: true,
+      html:
+        '<div class="dia dia--gracias">' +
+          '<div class="azulejo"></div>' +
+          '<div class="gr__luz"></div>' +
+          '<div class="gr__lado">' +
+            (ev.logo ? '<div class="gr__logo" data-kb style="background-image:' + fondo(ev.logo) + '"></div>' : '') +
+          '</div>' +
+          '<div class="gr__caja" data-entra>' +
+            '<p class="prod__categoria">' + esc(ui('eventoKicker')) + '</p>' +
+            '<h2 class="gr__nombre">' + esc(t(ev.name)) + '</h2>' +
+            '<span class="filete filete--terracota"></span>' +
+            (t(nota.title) ? '<p class="gr__titulo">' + esc(t(nota.title)) + '</p>' : '') +
+            '<p class="gr__texto">' + esc(t(nota.text)) + '</p>' +
+            (nota.signature ? '<p class="gr__firma">— ' + esc(t(nota.signature)) + '</p>' : '') +
+            (ev.instagram ? '<span class="gr__ig">' + IG + '<span>@' + esc(ev.instagram) + '</span></span>' : '') +
+          '</div>' +
+        '</div>'
+    };
+  }
+
   function evento() {
     var ev = DATA.evento;
+    if (ev.note && t(ev.note.text)) return gracias(ev);
     var datos = (ev.facts || []).map(function (f) {
       return '<div class="ev__dato"><dt>' + esc(t(f.label)) + '</dt>' +
              '<dd>' + esc(t(f.value)) + '</dd></div>';
@@ -410,6 +440,7 @@
         var ext = r[0] ? 'avif' : (r[1] ? 'webp' : 'jpg');
         var fotos = DATA.products.map(function (p) { return p.image; })
           .concat([DATA.site.heroImage])
+          .concat(MOSTRAR_EVENTO && DATA.evento && DATA.evento.active ? [DATA.evento.logo] : [])
           .filter(Boolean)
           .map(function (img) {
             var f = typeof img === 'string' ? img : img.file;

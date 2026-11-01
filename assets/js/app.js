@@ -282,7 +282,7 @@
       logo.innerHTML = formats.map(function (f) {
         return '<source type="image/' + esc(f) + '" srcset="assets/img/' + esc(base) + '.' + esc(f) + '">';
       }).join('') +
-        '<img src="assets/img/' + esc(file) + '" alt="' + esc(t(ev.name)) + '" width="400" height="400" loading="lazy" decoding="async">';
+        '<img src="assets/img/' + esc(file) + '" alt="' + esc(t(ev.name)) + '" width="720" height="720" loading="lazy" decoding="async">';
       logo.hidden = false;
     } else {
       logo.hidden = true;

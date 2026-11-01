@@ -1,10 +1,11 @@
 # Pantalla del stand
 
-Bucle en 16:9 para el televisor del stand. Ahora mismo son diez pantallas y
-64 segundos: portada; Fátima, con la Virgen y las banderas de Portugal y de
+Bucle en 16:9 para el televisor del stand. Ahora mismo son once pantallas y
+76 segundos: portada; Fátima, con la Virgen y las banderas de Portugal y de
 Madeira; el bolo solo; la promoción de dos; el de margarina de ajo; los dos
 chorizos juntos; el de Nutella; el bolo de mel con las broas; el chorizo por
-kilo con la margarina; y el cierre con el Instagram.
+kilo con la margarina; el agradecimiento a Parceiros Banda Show; y el cierre
+con el Instagram.
 
 Los productos marcados con `hidden: true` en `data/menu.js` (hoy: prego,
 bifana y las dos espetadas) no salen ni aquí ni en el menú del QR. Al
@@ -16,10 +17,13 @@ pareja con el logo de la izquierda, en todas las pantallas salvo la de
 Fátima, donde ya salen en grande. La Virgen de la esquina va en negro sobre
 las pantallas claras y en crema sobre las oscuras (portada y cierre).
 
-El evento del día **no sale aquí**, aunque sí esté en el menú del QR: son
-dos interruptores distintos a propósito. Para que aparezca también en el
-televisor, pon `MOSTRAR_EVENTO = true` en `pantalla/pantalla.js`; entonces se
-añade una pantalla antes del cierre y el bucle pasa a 60 segundos.
+El evento del día tiene su propio interruptor aquí, independiente del menú
+del QR: `MOSTRAR_EVENTO` en `pantalla/pantalla.js`. Ahora está en `true`
+para el agradecimiento a Parceiros Banda Show: una pantalla de 12 segundos
+antes del cierre, con su logo en grande, la nota de su aniversario firmada
+por la casa y su Instagram (sale así cuando el evento trae `note` en
+`data/menu.js`). El bucle queda en 76 segundos. Para quitarla del televisor
+sin tocar el menú, pon `MOSTRAR_EVENTO = false`.
 
 Los productos que se comparan entre sí comparten pantalla: así se ve la
 diferencia de precio de un vistazo, sin tener que recordar la anterior.

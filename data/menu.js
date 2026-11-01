@@ -142,7 +142,6 @@ window.MENU = {
     },
     {
       id: "prego",
-      hidden: true,            // no se vende en el evento de Parceiros
       category: "bolo-do-caco",
       price: 7,
       badges: [],

@@ -15,7 +15,10 @@
 
   /* los productos con hidden: true no se venden en este evento: fuera
      también de la pantalla (si era media pareja, el otro sale solo) */
-  DATA.products = DATA.products.filter(function (p) { return !p.hidden; });
+  function quitarOcultos() {
+    DATA.products = DATA.products.filter(function (p) { return !p.hidden; });
+  }
+  quitarOcultos();
 
   var LANG = 'es';          // idioma de la pantalla del stand
   var FUNDIDO = 0.9;        // segundos de cruce entre una y la siguiente
@@ -261,6 +264,7 @@
   }
 
   function construir() {
+    lista = [];
     lista.push(portada());
     lista.push(fatima());
 
@@ -514,6 +518,77 @@
     mostrar();
   }
 
+  /* ---------- se pone al día solo ---------- */
+
+  /* El televisor pasa días con la página abierta, y nadie se acuerda de
+     recargarla. Cada cinco minutos mira version.txt; si se publicó una
+     versión nueva, descarga los datos y los estilos nuevos sin recargar la
+     página (recargar quitaría la pantalla completa) y los estrena al
+     terminar la vuelta, empezando por la portada. Lo que cambie en este
+     archivo, pantalla.js, sí necesita recargar a mano. */
+  var REVISAR = 5 * 60 * 1000;
+  var versionActual = (document.querySelector('meta[name="version"]') || {}).content || '';
+  var pendiente = null;   // versión nueva descargándose o lista para estrenar
+
+  function vigilarVersion() {
+    if (!versionActual || !window.fetch) return;
+    setInterval(function () {
+      if (pendiente) return;
+      fetch('../version.txt?t=' + Date.now(), { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.text() : ''; })
+        .then(function (v) {
+          v = v.trim();
+          if (!v || v === versionActual || pendiente) return;
+          var p = pendiente = { version: v, datos: false, estilos: false };
+
+          /* la hoja nueva se carga sin aplicarse hasta el cambio de vuelta */
+          var css = p.css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.media = 'not all';
+          css.href = 'pantalla.css?v=' + encodeURIComponent(v);
+          css.onload = function () { p.estilos = true; };
+          css.onerror = function () { css.remove(); pendiente = null; };
+          document.head.appendChild(css);
+
+          /* menu.js vuelve a definir window.MENU con el contenido nuevo */
+          var js = document.createElement('script');
+          js.src = '../data/menu.js?v=' + encodeURIComponent(v);
+          js.onload = function () { p.datos = true; };
+          js.onerror = function () { css.remove(); pendiente = null; };
+          document.body.appendChild(js);
+        })
+        .catch(function () { /* sin internet: se sigue con lo que hay */ });
+    }, REVISAR);
+  }
+
+  /* Estrena la versión descargada. Devuelve true si la aplicó. */
+  function aplicarVersion() {
+    var p = pendiente;
+    if (!p || !p.datos || !p.estilos || !window.MENU) return false;
+
+    Array.prototype.forEach.call(document.querySelectorAll('link[href*="pantalla.css"]'), function (l) {
+      if (l !== p.css) l.remove();
+    });
+    p.css.media = 'all';
+
+    DATA = window.MENU;
+    quitarOcultos();
+    construir();
+    TOTAL = lista.reduce(function (s, d) { return s + d.dur; }, 0);
+    window.PANTALLA.total = TOTAL;
+    window.PANTALLA.diapositivas = lista.length;
+
+    versionActual = p.version;
+    var meta = document.querySelector('meta[name="version"]');
+    if (meta) meta.content = p.version;
+    var etiqueta = document.querySelector('.completa small');
+    if (etiqueta) etiqueta.textContent = 'versión ' + p.version;
+
+    pendiente = null;
+    precargar();
+    return true;
+  }
+
   /* ---------- arranque ---------- */
 
   construir();
@@ -529,9 +604,16 @@
     precargar();
     mantenerDespierta();
     botonPantallaCompleta();
-    var inicio = null;
+    vigilarVersion();
+    var inicio = null, vuelta = 0;
     (function paso(ahora) {
       if (inicio === null) inicio = ahora;
+      var n = Math.floor((ahora - inicio) / 1000 / TOTAL);
+      if (n !== vuelta) {
+        vuelta = n;
+        /* fin de vuelta: si hay versión nueva lista, empieza desde la portada */
+        if (aplicarVersion()) { inicio = ahora; vuelta = 0; }
+      }
       pintar((ahora - inicio) / 1000);
       requestAnimationFrame(paso);
     })(performance.now());

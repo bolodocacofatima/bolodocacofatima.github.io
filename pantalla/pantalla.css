@@ -23,6 +23,11 @@
   unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF;
 }
 
+/* La pantalla solo tiene versión clara. Sin esto, el "modo oscuro" de
+   algunos navegadores de televisor la oscurece por su cuenta: fondo gris,
+   letras invertidas y la Virgen negra sobre gris, casi invisible. */
+:root{color-scheme:only light}
+
 :root{
   --c-base:#FAF6EE; --c-surface:#FFFCF7; --c-surface-2:#F4EDE0;
   --c-ink:#221D1A; --c-ink-soft:#5B524B; --c-line:#E5DBCB;

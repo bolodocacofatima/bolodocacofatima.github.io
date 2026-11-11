@@ -47,6 +47,17 @@ además que la pantalla no se apague mientras corre el bucle.
 Una vez cargada no necesita internet: todo queda descargado y el bucle sigue
 aunque se caiga la conexión.
 
+## Se pone al día sola
+
+Con la página abierta, cada cinco minutos mira `version.txt`. Si se publicó
+una versión nueva, descarga los datos y los estilos sin recargar (así no se
+pierde la pantalla completa) y los estrena al terminar la vuelta, desde la
+portada. Un cambio en el evento, un producto o un precio llega solo al
+televisor en unos minutos.
+
+Lo único que no llega solo es un cambio en `pantalla.js`: ese pide recargar
+la página una vez.
+
 ## Si algo nuevo no aparece en el televisor
 
 Pulsa cualquier tecla del control: junto al botón de pantalla completa sale
@@ -54,6 +65,14 @@ la **versión** que tiene cargada. Si no coincide con la última, el televisor
 está usando una copia vieja: recarga la página, y si sigue igual, espera diez
 minutos (lo que tarda GitHub en dejar de servir la anterior) y vuelve a
 recargar.
+
+## Si se ve oscura
+
+La pantalla solo tiene versión clara y le dice al navegador que no la
+oscurezca. Si aun así sale con fondo gris oscuro y la Virgen casi invisible,
+el navegador del televisor tiene forzado su propio **modo oscuro**: hay que
+desactivarlo en sus ajustes (suele llamarse «Modo oscuro», «Tema oscuro» o
+«Forzar modo oscuro en sitios web»).
 
 Cada vez que se cambia algo hay que subir la versión, para que los navegadores
 no mezclen archivos nuevos con viejos:

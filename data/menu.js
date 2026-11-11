@@ -158,7 +158,7 @@ window.MENU = {
     },
     {
       id: "bifana",
-      hidden: true,            // no se vende en el evento de Parceiros
+      hidden: true,            // no se vende por ahora
       category: "bolo-do-caco",
       price: 9,
       badges: [],
@@ -215,7 +215,7 @@ window.MENU = {
     /* ---- Espetadas ---- */
     {
       id: "espetada-carne",
-      hidden: true,            // no se vende en el evento de Parceiros
+      hidden: true,            // no se vende por ahora
       category: "espetadas",
       price: 17,
       badges: ["tradicional"],
@@ -232,7 +232,7 @@ window.MENU = {
     },
     {
       id: "espetada-cochino",
-      hidden: true,            // no se vende en el evento de Parceiros
+      hidden: true,            // no se vende por ahora
       category: "espetadas",
       price: 14,
       badges: [],
@@ -367,25 +367,27 @@ window.MENU = {
      --------------------------------------------------------- */
   evento: {
     active: true,           // false = desaparece del menú del QR
-    name:     { es: "Parceiros Banda Show",  pt: "Parceiros Banda Show" },
-    subtitle: { es: "Música portuguesa «à nossa maneira»",
-                pt: "Música portuguesa «à nossa maneira»" },
+    name:     { es: "Torneo Interclubes de Dominó",  pt: "Torneio Interclubes de Dominó" },
+    subtitle: { es: "68.º aniversario del Centro Portugués",
+                pt: "68.º aniversário do Centro Portugués" },
     text: {
-      es: "Hoy estamos aquí por invitación de Parceiros Banda Show, el grupo de música portuguesa que se define como «el puente musical que une dos tierras en un solo ritmo». Ellos ponen el acordeón, las voces y la mejor energía en vivo; nosotros, el bolo do caco recién hecho.",
-      pt: "Hoje estamos aqui a convite dos Parceiros Banda Show, o grupo de música portuguesa que se define como «a ponte musical que une duas terras num só ritmo». Eles põem o acordeão, as vozes e a melhor energia ao vivo; nós, o bolo do caco acabado de fazer."
+      es: "Hoy, miércoles 11 de noviembre, el Centro Portugués celebra su sexagésimo octavo aniversario con un torneo interclubes de dominó en el Salón Nobre. Habrá degustaciones, obsequios, sorteos y premios en metálico, y nosotros estamos aquí con el bolo do caco recién hecho para acompañar cada partida.",
+      pt: "Hoje, quarta-feira 11 de novembro, o Centro Portugués celebra o seu sexagésimo oitavo aniversário com um torneio interclubes de dominó no Salón Nobre. Haverá degustações, brindes, sorteios e prémios em dinheiro, e nós estamos cá com o bolo do caco acabado de fazer para acompanhar cada partida."
     },
-    /* opcionales: logo e Instagram de los invitados, y una nota firmada */
-    logo: { file: "parceiros-logo.jpg", formats: ["avif", "webp"] },
-    instagram: "parceirosbandashow",
-    note: {
-      title: { es: "¡Feliz 4.º aniversario!", pt: "Parabéns pelos 4 anos!" },
-      text: {
-        es: "Cuatro años haciendo sonar a Portugal en Venezuela merecen celebrarse a lo grande. Gracias, Parceiros, por invitarnos a ser parte de su fiesta: es un orgullo acompañar su música con nuestro bolo do caco. ¡Por muchos años más!",
-        pt: "Quatro anos a fazer soar Portugal na Venezuela merecem ser festejados em grande. Obrigado, Parceiros, pelo convite para fazer parte da vossa festa: é um orgulho acompanhar a vossa música com o nosso bolo do caco. Que venham muitos mais!"
-      },
-      signature: "Bolo do Caco Fátima"
-    },
-    facts: []
+    /* opcionales, como en el evento de Parceiros Banda Show:
+       logo: { file: "archivo.jpg", formats: ["avif", "webp"] },
+       instagram: "usuario",
+       note: { title: {es, pt}, text: {es, pt}, signature: "Bolo do Caco Fátima" }
+       (con note, el televisor muestra la pantalla de agradecimiento) */
+    facts: [
+      { label: { es: "Convocatoria",  pt: "Convocatória" },
+        value: { es: "1:30 p. m.",    pt: "13h30" } },
+      { label: { es: "Hora de inicio", pt: "Início" },
+        value: { es: "4:30 p. m.",    pt: "16h30" } },
+      { label: { es: "Lugar",         pt: "Local" },
+        value: { es: "Salón Nobre del Centro Portugués",
+                 pt: "Salón Nobre do Centro Portugués" } }
+    ]
   },
 
   /* ---------------------------------------------------------

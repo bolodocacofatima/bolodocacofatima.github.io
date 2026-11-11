@@ -66,6 +66,11 @@ está usando una copia vieja: recarga la página, y si sigue igual, espera diez
 minutos (lo que tarda GitHub en dejar de servir la anterior) y vuelve a
 recargar.
 
+Si ni así cambia, el navegador se aferra a su copia guardada. Abre la
+dirección con un final distinto, que para él es una página nueva:
+`https://bolodocacofatima.github.io/pantalla/?v=` seguido de la fecha
+(por ejemplo `?v=20261111`). O borra la caché en los ajustes del navegador.
+
 ## Si se ve oscura
 
 La pantalla solo tiene versión clara y le dice al navegador que no la

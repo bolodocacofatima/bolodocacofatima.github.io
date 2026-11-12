@@ -1,0 +1,444 @@
+/* =============================================================
+   BOLO DO CACO FÁTIMA, C.A. — Fuente única de contenido
+   -------------------------------------------------------------
+   Este es el ÚNICO archivo que hay que editar para cambiar
+   precios, textos, productos o fotos. No hace falta tocar
+   HTML, CSS ni JS.
+
+   Se carga con <script> normal (no fetch) para que el menú
+   funcione incluso abriendo index.html con doble clic.
+   ============================================================= */
+
+window.MENU = {
+
+  /* ---------------------------------------------------------
+     1. DATOS DEL NEGOCIO
+     --------------------------------------------------------- */
+  site: {
+    name: "Bolo do Caco Fátima",
+    legal: "C.A.",
+    // Eslogan del hero (máx. ~60 caracteres para que no rompa línea en móvil)
+    tagline: {
+      es: "Un pedazo de Portugal en cada bocado",
+      pt: "Um pedaço de Portugal em cada dentada"
+    },
+    kicker: {
+      es: "Madeira · Venezuela",
+      pt: "Madeira · Venezuela"
+    },
+    currency: "$",
+    instagram: "bolodocacofatima_",
+    // Imagen del hero. null = se usa el fondo de azulejo (queda acabado).
+    // Formato: { file: "hero-bolo.jpg", formats: ["avif","webp"] }  ó  "hero-bolo.jpg"
+    heroImage: { file: "hero-bolo.jpg", formats: ["avif", "webp"] }
+  },
+
+  /* ---------------------------------------------------------
+     2. CATEGORÍAS (el orden aquí es el orden en pantalla)
+     --------------------------------------------------------- */
+  categories: [
+    {
+      id: "bolo-do-caco",
+      hero: true,               // true = sección monográfica con carrusel
+      name:    { es: "Bolo do Caco",  pt: "Bolo do Caco" },
+      kicker:  { es: "Nuestra especialidad", pt: "A nossa especialidade" },
+      tagline: {
+        es: "Masa de boniato dorada al fuego, como en Madeira.",
+        pt: "Massa de batata-doce dourada ao lume, como na Madeira."
+      }
+    },
+    {
+      id: "espetadas",
+      name:    { es: "Espetadas", pt: "Espetadas" },
+      kicker:  { es: "Al estilo de Madeira", pt: "À moda da Madeira" },
+      tagline: {
+        es: "Carne en espeto, como se hace en la isla.",
+        pt: "Carne no espeto, como se faz na ilha."
+      }
+    },
+    {
+      id: "docaria",
+      name:    { es: "Doçaria",  pt: "Doçaria" },
+      kicker:  { es: "Dulces de la casa", pt: "Doces da casa" },
+      tagline: {
+        es: "Los dulces que acompañan a cualquier hora del día.",
+        pt: "Os doces que acompanham a qualquer hora do dia."
+      }
+    },
+    {
+      id: "para-llevar",
+      name:    { es: "Para llevar",  pt: "Para levar" },
+      kicker:  { es: "De nuestra despensa", pt: "Da nossa despensa" },
+      tagline: {
+        es: "Lo que ponemos en el bolo, para que lo hagas en casa.",
+        pt: "O que pomos no bolo, para fazer em casa."
+      }
+    }
+  ],
+
+  /* ---------------------------------------------------------
+     3. PRODUCTOS
+         price    → número, sin símbolo
+         badges   → "estrella" | "mas-vendido" | "novedad" | "tradicional" | "vegetariano"
+         image    → null, "archivo.jpg", ó { file:"archivo.jpg", formats:["avif","webp"] }
+         hidden   → true = no sale ni en el menú ni en el televisor (para los
+                    eventos en que no se vende). Para que vuelva, bórralo o
+                    pon false. Si una categoría se queda sin productos,
+                    desaparece sola con su pestaña.
+     --------------------------------------------------------- */
+  products: [
+
+    /* ---- Bolo do Caco ---- */
+    {
+      id: "bolo-natural",
+      category: "bolo-do-caco",
+      price: 3,
+      badges: ["tradicional"],
+      image: { file: "bolo-natural.jpg", formats: ["avif", "webp"] },
+      name: { es: "Bolo do Caco Grande", pt: "Bolo do Caco Grande" },
+      short: {
+        es: "El clásico, recién hecho y sin nada encima.",
+        pt: "O clássico, acabado de fazer e sem nada por cima."
+      },
+      long: {
+        es: "Masa de boniato amasada a mano y dorada al fuego: crujiente por fuera, tierno y esponjoso por dentro. Sin nada encima, para acompañar lo que quieras.",
+        pt: "Massa de batata-doce amassada à mão e dourada ao lume: crocante por fora, fofo e macio por dentro. Sem nada por cima, para acompanhar o que quiser."
+      }
+    },
+    {
+      id: "promo-2x5",
+      category: "bolo-do-caco",
+      price: 5,
+      badges: ["promo"],
+      image: { file: "promo-2x5.jpg", formats: ["avif", "webp"] },
+      name: { es: "2 Bolos do Caco Grandes", pt: "2 Bolos do Caco Grandes" },
+      short: {
+        es: "Llévate dos y pagas cinco dólares.",
+        pt: "Leve dois e paga cinco dólares."
+      },
+      long: {
+        es: "Dos bolos do caco grandes por cinco dólares. Para compartir en la mesa o llevarte uno a casa.",
+        pt: "Dois bolos do caco grandes por cinco dólares. Para partilhar à mesa ou levar um para casa."
+      }
+    },
+    {
+      id: "bolo-ajo",
+      category: "bolo-do-caco",
+      price: 5,
+      badges: ["estrella"],
+      image: { file: "bolo-ajo.jpg", formats: ["avif", "webp"] },
+      name: {
+        es: "Bolo do Caco con Margarina de Ajo y Perejil",
+        pt: "Bolo do Caco com Margarina de Alho e Salsa"
+      },
+      short: {
+        es: "El de siempre: ajo, perejil y mucha margarina.",
+        pt: "O de sempre: alho, salsa e muita margarina."
+      },
+      long: {
+        es: "Abierto en caliente y untado generosamente con margarina de ajo y perejil, que se derrite dentro del pan. El bocado que define la casa.",
+        pt: "Aberto ainda quente e generosamente untado com margarina de alho e salsa, que derrete dentro do pão. A dentada que define a casa."
+      }
+    },
+    {
+      id: "prego",
+      category: "bolo-do-caco",
+      price: 7,
+      badges: [],
+      image: { file: "prego.jpg", formats: ["avif", "webp"] },
+      name: { es: "Prego en Bolo do Caco", pt: "Prego no Bolo do Caco" },
+      short: {
+        es: "El clásico portugués de filete de res.",
+        pt: "O clássico português de bife de vaca."
+      },
+      long: {
+        es: "Filete de res en lonjas dentro de nuestro bolo do caco recién hecho. El prego de toda la vida, como se come en Madeira.",
+        pt: "Bife de vaca às fatias dentro do nosso bolo do caco acabado de fazer. O prego de sempre, como se come na Madeira."
+      }
+    },
+    {
+      id: "bifana",
+      hidden: true,            // no se vende por ahora
+      category: "bolo-do-caco",
+      price: 9,
+      badges: [],
+      image: { file: "bifana.jpg", formats: ["avif", "webp"] },
+      name: { es: "Bifana en Bolo do Caco", pt: "Bifana no Bolo do Caco" },
+      short: {
+        es: "Lonjas de cerdo, dentro del bolo.",
+        pt: "Fatias de porco, dentro do bolo."
+      },
+      long: {
+        es: "Lonjas de cerdo dentro de nuestro bolo do caco recién hecho. La bifana de las fiestas portuguesas.",
+        pt: "Fatias de porco dentro do nosso bolo do caco acabado de fazer. A bifana das festas portuguesas."
+      }
+    },
+    {
+      id: "bolo-montserratina",
+      category: "bolo-do-caco",
+      price: 10,
+      badges: [],
+      image: { file: "bolo-montserratina.jpg", formats: ["avif", "webp"] },
+      name: {
+        es: "Bolo do Caco con Chorizo Ahumado Montserratina",
+        pt: "Bolo do Caco com Chouriço Fumado Montserratina"
+      },
+      short: {
+        es: "Chorizo ahumado Montserratina, a la plancha.",
+        pt: "Chouriço fumado Montserratina, na chapa."
+      },
+      long: {
+        es: "Nuestro bolo do caco relleno de chorizo ahumado Montserratina hecho a la plancha. Ahumado, jugoso y contundente.",
+        pt: "O nosso bolo do caco recheado com chouriço fumado Montserratina feito na chapa. Fumado, suculento e substancial."
+      }
+    },
+    {
+      id: "bolo-portugues",
+      category: "bolo-do-caco",
+      price: 14,
+      badges: [],
+      image: { file: "bolo-portugues.jpg", formats: ["avif", "webp"] },
+      name: {
+        es: "Bolo do Caco con Chorizo Portugués",
+        pt: "Bolo do Caco com Chouriço Português"
+      },
+      short: {
+        es: "Chorizo portugués, el relleno más pedido de la mesa.",
+        pt: "Chouriço português, o recheio mais pedido da mesa."
+      },
+      long: {
+        es: "Chorizo portugués en lonchas gruesas dentro del bolo do caco recién hecho. Sabor a fiesta de romaria.",
+        pt: "Chouriço português em fatias grossas dentro do bolo do caco acabado de fazer. Sabor a festa de romaria."
+      }
+    },
+
+    /* ---- Espetadas ---- */
+    {
+      id: "espetada-carne",
+      hidden: true,            // no se vende por ahora
+      category: "espetadas",
+      price: 17,
+      badges: ["tradicional"],
+      image: { file: "espetada-carne.jpg", formats: ["avif", "webp"] },
+      name: { es: "Espetada de Carne", pt: "Espetada de Carne" },
+      short: {
+        es: "Carne de res en espeto, como en Madeira.",
+        pt: "Carne de vaca no espeto, como na Madeira."
+      },
+      long: {
+        es: "El plato más típico de Madeira: trozos de carne de res ensartados en el espeto y asados.",
+        pt: "O prato mais típico da Madeira: pedaços de carne de vaca enfiados no espeto e assados."
+      }
+    },
+    {
+      id: "espetada-cochino",
+      hidden: true,            // no se vende por ahora
+      category: "espetadas",
+      price: 14,
+      badges: [],
+      image: { file: "espetada-cochino.jpg", formats: ["avif", "webp"] },
+      name: { es: "Espetada de Cochino", pt: "Espetada de Porco" },
+      short: {
+        es: "Trozos de cochino en espeto.",
+        pt: "Pedaços de porco no espeto."
+      },
+      long: {
+        es: "La misma espetada madeirense, con trozos de cochino ensartados en el espeto y asados.",
+        pt: "A mesma espetada madeirense, com pedaços de porco enfiados no espeto e assados."
+      }
+    },
+
+    /* ---- Doçaria ---- */
+    {
+      id: "bolo-nutella",
+      category: "docaria",
+      price: 10,
+      badges: ["novedad"],
+      image: { file: "bolo-nutella.jpg", formats: ["avif", "webp"] },
+      name: { es: "Bolo do Caco con Nutella", pt: "Bolo do Caco com Nutella" },
+      short: {
+        es: "Cuatro pedazos, para compartir.",
+        pt: "Quatro pedaços, para partilhar."
+      },
+      long: {
+        es: "El mismo bolo do caco caliente, abierto y relleno de Nutella hasta que se derrite. Cuatro pedazos, para poner en el centro de la mesa.",
+        pt: "O mesmo bolo do caco quente, aberto e recheado com Nutella até derreter. Quatro pedaços, para pôr no centro da mesa."
+      }
+    },
+    {
+      id: "bolo-de-mel",
+      category: "docaria",
+      price: 12,
+      badges: ["tradicional"],
+      image: { file: "bolo-de-mel.jpg", formats: ["avif", "webp"] },
+      name: { es: "Bolo de Mel", pt: "Bolo de Mel" },
+      short: {
+        es: "El bizcocho de miel de caña de Madeira.",
+        pt: "O bolo de mel de cana da Madeira."
+      },
+      long: {
+        es: "Bizcocho denso y especiado de miel de caña, el dulce más emblemático de Madeira. Se corta a trozos y se parte con la mano, nunca con cuchillo.",
+        pt: "Bolo denso e especiado de mel de cana, o doce mais emblemático da Madeira. Corta-se aos pedaços e parte-se à mão, nunca com faca."
+      }
+    },
+    {
+      id: "broas",
+      category: "docaria",
+      price: 8,
+      badges: [],
+      image: { file: "broas.jpg", formats: ["avif", "webp"] },
+      name: { es: "Galletas Broas", pt: "Broas" },
+      short: {
+        es: "Galletas portuguesas, para llevar en el bolso.",
+        pt: "Bolachas portuguesas, para levar na mala."
+      },
+      long: {
+        es: "Broas caseras, con su miga densa y su punto justo de dulzor. Las de toda la vida, las que se comen de camino a casa.",
+        pt: "Broas caseiras, de miolo denso e doçura no ponto. As de sempre, as que se comem no caminho para casa."
+      }
+    },
+
+    /* ---- Para llevar ---- */
+    {
+      id: "chorizo-kilo",
+      category: "para-llevar",
+      price: 40,
+      unit: { es: "el kilo", pt: "o quilo" },
+      badges: [],
+      image: { file: "chorizo-kilo.jpg", formats: ["avif", "webp"] },
+      name: { es: "Chorizo Portugués", pt: "Chouriço Português" },
+      short: {
+        es: "Nuestro chorizo, para llevártelo por kilo.",
+        pt: "O nosso chouriço, para levar ao quilo."
+      },
+      long: {
+        es: "El mismo chorizo portugués que va dentro de nuestro bolo do caco, para que te lo lleves y lo hagas en casa. Se vende por kilo.",
+        pt: "O mesmo chouriço português que vai dentro do nosso bolo do caco, para levar e fazer em casa. Vende-se ao quilo."
+      }
+    },
+    {
+      id: "margarina-ajo",
+      category: "para-llevar",
+      price: 6,
+      unit: { es: "la unidad", pt: "a unidade" },
+      badges: [],
+      image: { file: "margarina-ajo.jpg", formats: ["avif", "webp"] },
+      name: { es: "Margarina de Ajo y Perejil", pt: "Margarina de Alho e Salsa" },
+      short: {
+        es: "La que untamos en el bolo, en su pote.",
+        pt: "A que barramos no bolo, no seu boião."
+      },
+      long: {
+        es: "La misma margarina de ajo y perejil que lleva nuestro bolo do caco, en pote para llevar. Va bien con pan, con carnes o con lo que se te ocurra.",
+        pt: "A mesma margarina de alho e salsa que leva o nosso bolo do caco, em boião para levar. Vai bem com pão, com carnes ou com o que lhe apetecer."
+      }
+    }
+  ],
+
+  /* ---------------------------------------------------------
+     4. TIRA NARRATIVA (los 3 pasos bajo el carrusel)
+     --------------------------------------------------------- */
+  story: [
+    {
+      icon: "dough",
+      title: { es: "Masa de boniato", pt: "Massa de batata-doce" },
+      text:  { es: "Amasada a mano, sin prisa, como se hace en la isla.",
+               pt: "Amassada à mão, sem pressa, como se faz na ilha." }
+    },
+    {
+      icon: "lume",
+      title: { es: "Dorado al fuego", pt: "Dourado ao lume" },
+      text:  { es: "Cocido despacio, hasta que la corteza queda tostada.",
+               pt: "Cozido devagar, até a côdea ficar tostada." }
+    },
+    {
+      icon: "butter",
+      title: { es: "Abierto en caliente", pt: "Aberto ainda quente" },
+      text:  { es: "Ajo y perejil que se derriten dentro del pan recién hecho.",
+               pt: "Alho e salsa que derretem dentro do pão acabado de fazer." }
+    }
+  ],
+
+  /* ---------------------------------------------------------
+     5. EL EVENTO DEL DÍA
+         Se cambia antes de cada evento. Si no hay ninguno,
+         pon active: false y la sección desaparece sola
+         (también su pestaña en la barra de categorías).
+     --------------------------------------------------------- */
+  evento: {
+    active: true,           // false = desaparece del menú del QR
+    name:     { es: "Torneo Interclubes de Dominó",  pt: "Torneio Interclubes de Dominó" },
+    subtitle: { es: "68.º aniversario del Centro Portugués",
+                pt: "68.º aniversário do Centro Portugués" },
+    text: {
+      es: "Hoy, miércoles 11 de noviembre, el Centro Portugués celebra su sexagésimo octavo aniversario con un torneo interclubes de dominó en el Salón Nobre. Habrá degustaciones, obsequios, sorteos y premios en metálico, y nosotros estamos aquí con el bolo do caco recién hecho para acompañar cada partida.",
+      pt: "Hoje, quarta-feira 11 de novembro, o Centro Portugués celebra o seu sexagésimo oitavo aniversário com um torneio interclubes de dominó no Salón Nobre. Haverá degustações, brindes, sorteios e prémios em dinheiro, e nós estamos cá com o bolo do caco acabado de fazer para acompanhar cada partida."
+    },
+    /* opcionales, como en el evento de Parceiros Banda Show:
+       logo: { file: "archivo.jpg", formats: ["avif", "webp"] },
+       instagram: "usuario",
+       note: { title: {es, pt}, text: {es, pt}, signature: "Bolo do Caco Fátima" }
+       (con note, el televisor muestra la pantalla de agradecimiento) */
+    facts: [
+      { label: { es: "Convocatoria",  pt: "Convocatória" },
+        value: { es: "1:30 p. m.",    pt: "13h30" } },
+      { label: { es: "Hora de inicio", pt: "Início" },
+        value: { es: "4:30 p. m.",    pt: "16h30" } },
+      { label: { es: "Lugar",         pt: "Local" },
+        value: { es: "Salón Nobre del Centro Portugués",
+                 pt: "Salón Nobre do Centro Portugués" } }
+    ]
+  },
+
+  /* ---------------------------------------------------------
+     6. TEXTOS DE INTERFAZ
+     --------------------------------------------------------- */
+  ui: {
+    es: {
+      langName: "Español",
+      menuLabel: "Categorías del menú",
+      scroll: "Desliza",
+      viewMore: "Ver detalle",
+      close: "Cerrar",
+      eventoKicker: "El evento de hoy",
+      eventoChip: "El evento",
+      eventoFollow: "Síguelos en Instagram",
+      orderAtStand: "Pídelo en nuestro stand",
+      igLabel: "Síguenos en Instagram",
+      follow: "Síguenos",
+      badges: {
+        promo: "Promoción",
+        estrella: "La estrella",
+        "mas-vendido": "Más vendido",
+        novedad: "Novedad",
+        tradicional: "Tradicional",
+        vegetariano: "Vegetariano"
+      },
+      photoSoon: "Foto en camino",
+      priceNote: "Precios en dólares"
+    },
+    pt: {
+      langName: "Português",
+      menuLabel: "Categorias do menu",
+      scroll: "Deslize",
+      viewMore: "Ver detalhe",
+      close: "Fechar",
+      eventoKicker: "O evento de hoje",
+      eventoChip: "O evento",
+      eventoFollow: "Siga-os no Instagram",
+      orderAtStand: "Peça no nosso stand",
+      igLabel: "Siga-nos no Instagram",
+      follow: "Siga-nos",
+      badges: {
+        promo: "Promoção",
+        estrella: "A estrela",
+        "mas-vendido": "Mais vendido",
+        novedad: "Novidade",
+        tradicional: "Tradicional",
+        vegetariano: "Vegetariano"
+      },
+      photoSoon: "Foto a caminho",
+      priceNote: "Preços em dólares"
+    }
+  }
+};

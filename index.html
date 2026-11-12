@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="version" content="2026-11-12.1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bolo do Caco Fátima — Menú</title>
+<meta name="description" content="Bolo do Caco Fátima, C.A. — Bolo do caco, chorizo portugués y doçaria de Madeira. Menú de la panadería.">
+<meta name="theme-color" content="#221D1A">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bolodocacofatima.github.io/">
+<meta property="og:title" content="Bolo do Caco Fátima — Menú">
+<meta property="og:description" content="Un pedazo de Portugal en cada bocado.">
+<meta property="og:image" content="https://bolodocacofatima.github.io/assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/logo-256.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css?v=2026-11-12.1">
+</head>
+<body>
+
+<a class="skip-link" href="#menu">Ir al menú</a>
+
+<!-- ============ CABECERA ============ -->
+<header class="topbar" id="topbar">
+  <a class="brand" href="#top" aria-label="Bolo do Caco Fátima — inicio">
+    <img class="brand__mark" src="assets/img/logo-256.png" alt="" width="256" height="256" decoding="async">
+    <span class="brand__text">
+      <strong>Bolo do Caco</strong>
+      <em>Fátima</em>
+    </span>
+  </a>
+
+  <div class="langswitch" role="group" aria-label="Idioma / Idioma">
+    <button type="button" class="langswitch__btn is-active" data-lang-btn="es" aria-pressed="true">ES</button>
+    <button type="button" class="langswitch__btn" data-lang-btn="pt" aria-pressed="false">PT</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__media" id="heroMedia" aria-hidden="true"></div>
+    <div class="hero__veil" aria-hidden="true"></div>
+
+    <!-- Sello de la casa: marcado sobre la corteza. Decorativo, no se anuncia
+         a los lectores de pantalla porque no aporta nada que no diga ya el hero. -->
+    <svg class="sello" viewBox="0 0 130 130" fill="none" aria-hidden="true" focusable="false">
+      <defs>
+        <!-- irregularidad del borde: evita el aspecto de vector perfecto -->
+        <filter id="selloRough">
+          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <path id="selloArcoTop" d="M 65,65 m -47,0 a 47,47 0 0 1 94,0"/>
+        <path id="selloArcoBot" d="M 65,65 m -47,0 a 47,47 0 0 0 94,0"/>
+      </defs>
+      <g filter="url(#selloRough)">
+        <circle cx="65" cy="65" r="61" stroke="currentColor" stroke-width="2.4"/>
+        <circle cx="65" cy="65" r="54.5" stroke="currentColor" stroke-width=".9"/>
+        <text fill="currentColor" font-size="9" font-weight="700" letter-spacing="1.35">
+          <textPath href="#selloArcoTop" startOffset="50%" text-anchor="middle">BOLO DO CACO FÁTIMA</textPath>
+        </text>
+        <text fill="currentColor" font-size="7.6" font-weight="600" letter-spacing="2.2">
+          <textPath href="#selloArcoBot" startOffset="50%" text-anchor="middle">MADEIRA · VENEZUELA</textPath>
+        </text>
+        <path d="M15.5 65l2.6-2.6 2.6 2.6-2.6 2.6zM109.3 65l2.6-2.6 2.6 2.6-2.6 2.6z" fill="currentColor"/>
+        <text x="65" y="53" fill="currentColor" font-size="7.4" font-weight="700"
+              letter-spacing="2.4" text-anchor="middle">FEITO</text>
+        <text x="65" y="74" fill="currentColor" font-size="19" font-weight="700"
+              text-anchor="middle" class="sello__display">À MÃO</text>
+        <path d="M48 83h34" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M59 90l1.9-1.9 1.9 1.9-1.9 1.9zM65 90l1.9-1.9 1.9 1.9-1.9 1.9zM71 90l1.9-1.9 1.9 1.9-1.9 1.9z"
+              fill="currentColor" opacity=".85"/>
+      </g>
+    </svg>
+    <div class="hero__inner">
+      <div class="hero__banderas">
+        <img src="assets/img/bandera-portugal.png" alt="Portugal" width="600" height="400">
+        <img src="assets/img/bandera-madeira.png" alt="Madeira" width="600" height="400">
+      </div>
+      <p class="hero__kicker" data-i18n="site.kicker">Madeira · Venezuela</p>
+      <h1 class="hero__title">
+        <span class="hero__title-small">O rei da casa</span>
+        Bolo do Caco
+      </h1>
+      <span class="flourish" aria-hidden="true"></span>
+      <p class="hero__tagline" data-i18n="site.tagline">Un pedazo de Portugal en cada bocado</p>
+    </div>
+    <a class="hero__cue" href="#menu" aria-label="Bajar al menú">
+      <span data-i18n="ui.scroll">Desliza</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ NAV DE CATEGORÍAS (sticky) ============ -->
+  <nav class="catnav" id="catnav" aria-label="Categorías del menú">
+    <ul class="catnav__list" id="catnavList"></ul>
+  </nav>
+
+  <div id="menu">
+    <!-- Las secciones del menú se generan aquí desde data/menu.js -->
+  </div>
+
+  <!-- ============ EL EVENTO DEL DÍA ============ -->
+  <section class="evento" id="evento" aria-labelledby="evento-title" hidden>
+    <div class="wrap">
+      <picture class="evento__logo" id="eventoLogo" hidden></picture>
+      <p class="kicker" id="eventoKicker"></p>
+      <h2 class="section__title" id="evento-title"></h2>
+      <span class="flourish flourish--dark" aria-hidden="true"></span>
+      <p class="evento__subtitle" id="eventoSubtitle"></p>
+      <p class="evento__text" id="eventoText"></p>
+      <div class="nota" id="eventoNote" hidden></div>
+      <a class="evento__ig" id="eventoIg" target="_blank" rel="noopener" hidden></a>
+      <dl class="facts" id="eventoFacts"></dl>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ PIE ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <!-- Nuestra Señora de Fátima, que da nombre a la casa. En modo oscuro se
+         pinta en crema para que no desaparezca sobre el fondo. -->
+    <picture class="footer__virgen">
+      <source srcset="assets/img/virgen-fatima-crema.svg" media="(prefers-color-scheme: dark)">
+      <img src="assets/img/virgen-fatima.svg" alt="Nossa Senhora de Fátima" width="357" height="504" loading="lazy">
+    </picture>
+    <p class="footer__brand">Bolo do Caco Fátima, C.A.</p>
+    <a class="footer__ig" id="footerIg" href="#" target="_blank" rel="noopener"></a>
+    <p class="footer__note" data-i18n="ui.priceNote">Precios en dólares</p>
+  </div>
+</footer>
+
+<!-- ============ BOTÓN FLOTANTE ============ -->
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener">
+  <span class="fab__icon" id="fabIcon" aria-hidden="true"></span>
+  <span class="fab__label" id="fabLabel">Encargar</span>
+</a>
+
+<!-- ============ BOTTOM SHEET (detalle de producto) ============ -->
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet__backdrop" data-sheet-close></div>
+  <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <button class="sheet__close" type="button" data-sheet-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <span class="sheet__grip" aria-hidden="true"></span>
+    <div class="sheet__media" id="sheetMedia"></div>
+    <div class="sheet__body">
+      <div class="sheet__badges" id="sheetBadges"></div>
+      <h2 class="sheet__title" id="sheetTitle"></h2>
+      <p class="sheet__price" id="sheetPrice"></p>
+      <p class="sheet__desc" id="sheetDesc"></p>
+      <div class="sheet__actions" id="sheetActions"></div>
+    </div>
+  </div>
+</div>
+
+<script src="data/menu.js?v=2026-11-12.1"></script>
+<script src="assets/js/app.js?v=2026-11-12.1"></script>
+</body>
+</html>

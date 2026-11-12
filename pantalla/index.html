@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="version" content="2026-11-12.1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- solo claro: algunos navegadores de televisor oscurecen la página por su cuenta -->
+<meta name="color-scheme" content="only light">
+<!-- que el navegador del televisor pregunte siempre por la página nueva en vez
+     de quedarse con una copia guardada (algunos lo respetan, otros no) -->
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Bolo do Caco Fátima — Pantalla</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="pantalla.css?v=2026-11-12.1">
+</head>
+<body>
+
+<!-- El escenario mide siempre 1920x1080 y se escala para llenar la pantalla,
+     así se ve igual en un televisor, en una laptop o en la grabación. -->
+<div class="escenario" id="escenario">
+  <div class="diapositivas" id="diapositivas"></div>
+
+  <!-- firma fija, sobre todas las diapositivas -->
+  <div class="firma" id="firma">
+    <img class="firma__logo" src="../assets/img/logo-256.png" alt="">
+    <span class="firma__texto">
+      <strong>Bolo do Caco</strong>
+      <em>Fátima</em>
+    </span>
+  </div>
+
+  <!-- la Virgen y las dos banderas, fijas arriba a la derecha: equilibran la
+       firma de la izquierda. La Virgen va en negro sobre fondo claro y en crema
+       sobre las diapositivas oscuras; el reloj funde una con otra. -->
+  <div class="banderas" id="banderas">
+    <span class="banderas__virgen">
+      <img id="virgenNegra" src="../assets/img/virgen-fatima-mini.png" alt="Nossa Senhora de Fátima" width="68" height="96">
+      <img id="virgenCrema" src="../assets/img/virgen-fatima-mini-crema.png" alt="" width="68" height="96">
+    </span>
+    <img src="../assets/img/bandera-portugal.png" alt="Portugal" width="600" height="400">
+    <img src="../assets/img/bandera-madeira.png" alt="Madeira" width="600" height="400">
+  </div>
+
+  <div class="progreso"><span class="progreso__barra" id="progresoBarra"></span></div>
+</div>
+
+<script src="../data/menu.js?v=2026-11-12.1"></script>
+<script src="pantalla.js?v=2026-11-12.1"></script>
+</body>
+</html>

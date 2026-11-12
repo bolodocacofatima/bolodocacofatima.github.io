@@ -453,6 +453,7 @@
             return '../assets/img/' + f.replace(/\.[^.]+$/, '') + '.' + usa;
           });
         fotos.push('../assets/img/virgen-fatima.png',
+                   '../assets/img/mano-fatima.png',
                    '../assets/img/virgen-fatima-mini.png',
                    '../assets/img/virgen-fatima-mini-crema.png',
                    '../assets/img/bandera-portugal.png',

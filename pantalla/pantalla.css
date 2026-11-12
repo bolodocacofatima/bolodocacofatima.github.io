@@ -104,6 +104,12 @@ img{display:block}
 .fat__titulo{font-family:var(--f-display);font-size:220px;font-weight:700;line-height:.92;
   letter-spacing:-.035em;font-variation-settings:"SOFT" 60,"WONK" 1,"opsz" 144;margin-top:6px}
 .dia--fatima .filete{margin:34px 0 0}
+/* La Mano de Fátima junto al nombre, como un sticker pegado un poco ladeado.
+   Va aquí y no en pantalla.js para que llegue sola a los televisores con la
+   actualización automática, sin tener que recargarlos. */
+.fat__titulo::after{content:"";display:inline-block;width:182px;height:240px;margin-left:36px;
+  vertical-align:-30px;transform:rotate(6deg);
+  background:url('../assets/img/mano-fatima.png') center/contain no-repeat}
 .fat__banderas{display:flex;gap:44px;margin-top:56px}
 .fat__banderas figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:18px}
 .fat__banderas img{width:240px;height:160px;border-radius:10px;object-fit:cover;

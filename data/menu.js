@@ -142,6 +142,7 @@ window.MENU = {
     },
     {
       id: "prego",
+      hidden: true,            // no se vende por ahora
       category: "bolo-do-caco",
       price: 7,
       badges: [],
@@ -367,12 +368,12 @@ window.MENU = {
      --------------------------------------------------------- */
   evento: {
     active: true,           // false = desaparece del menú del QR
-    name:     { es: "Torneo Interclubes de Dominó",  pt: "Torneio Interclubes de Dominó" },
-    subtitle: { es: "68.º aniversario del Centro Portugués",
-                pt: "68.º aniversário do Centro Portugués" },
+    name:     { es: "Fiesta de San Martiño",  pt: "Festa de São Martinho" },
+    subtitle: { es: "Castañas asadas, vino nuevo y el veranillo de San Martín",
+                pt: "Castanhas assadas, vinho novo e o Verão de São Martinho" },
     text: {
-      es: "Hoy, miércoles 11 de noviembre, el Centro Portugués celebra su sexagésimo octavo aniversario con un torneo interclubes de dominó en el Salón Nobre. Habrá degustaciones, obsequios, sorteos y premios en metálico, y nosotros estamos aquí con el bolo do caco recién hecho para acompañar cada partida.",
-      pt: "Hoje, quarta-feira 11 de novembro, o Centro Portugués celebra o seu sexagésimo oitavo aniversário com um torneio interclubes de dominó no Salón Nobre. Haverá degustações, brindes, sorteios e prémios em dinheiro, e nós estamos cá com o bolo do caco acabado de fazer para acompanhar cada partida."
+      es: "Cada 11 de noviembre, Portugal y Madeira celebran a San Martín con el magusto: castañas asadas al fuego, vino nuevo y amigos alrededor. Cuenta la leyenda que Martín, un soldado romano, partió su capa en dos para abrigar a un mendigo en un día de lluvia, y que el sol salió de repente: de ahí el veranillo de San Martín, esos días templados en pleno otoño. Hoy lo celebramos aquí con el bolo do caco recién hecho.",
+      pt: "Todos os anos, a 11 de novembro, Portugal e a Madeira festejam o São Martinho com o magusto: castanhas assadas na brasa, vinho novo e amigos à volta. Conta a lenda que Martinho, um soldado romano, cortou a capa ao meio para abrigar um mendigo num dia de chuva, e que o sol apareceu de repente: daí o Verão de São Martinho, aqueles dias amenos em pleno outono. Hoje festejamos aqui com o bolo do caco acabado de fazer."
     },
     /* opcionales, como en el evento de Parceiros Banda Show:
        logo: { file: "archivo.jpg", formats: ["avif", "webp"] },
@@ -380,13 +381,15 @@ window.MENU = {
        note: { title: {es, pt}, text: {es, pt}, signature: "Bolo do Caco Fátima" }
        (con note, el televisor muestra la pantalla de agradecimiento) */
     facts: [
-      { label: { es: "Convocatoria",  pt: "Convocatória" },
-        value: { es: "1:30 p. m.",    pt: "13h30" } },
-      { label: { es: "Hora de inicio", pt: "Início" },
-        value: { es: "4:30 p. m.",    pt: "16h30" } },
-      { label: { es: "Lugar",         pt: "Local" },
-        value: { es: "Salón Nobre del Centro Portugués",
-                 pt: "Salón Nobre do Centro Portugués" } }
+      { label: { es: "El día",       pt: "O dia" },
+        value: { es: "11 de noviembre, San Martín de Tours",
+                 pt: "11 de novembro, São Martinho de Tours" } },
+      { label: { es: "La tradición", pt: "A tradição" },
+        value: { es: "El magusto: castañas asadas y vino nuevo",
+                 pt: "O magusto: castanhas assadas e vinho novo" } },
+      { label: { es: "El refrán",    pt: "O ditado" },
+        value: { es: "«No dia de São Martinho, vai à adega e prova o vinho»",
+                 pt: "«No dia de São Martinho, vai à adega e prova o vinho»" } }
     ]
   },
 

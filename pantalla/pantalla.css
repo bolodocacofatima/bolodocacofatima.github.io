@@ -221,7 +221,8 @@ img{display:block}
   letter-spacing:-.03em;font-variation-settings:"SOFT" 50,"WONK" 1,"opsz" 120;text-wrap:balance}
 .ev__sub{font-family:var(--f-display);font-size:38px;font-style:italic;color:var(--c-azulejo);
   margin-top:28px}
-.ev__texto{font-size:33px;line-height:1.45;color:var(--c-ink-soft);max-width:1300px;margin-top:30px}
+.ev__texto{font-size:33px;line-height:1.45;color:var(--c-ink-soft);max-width:1300px;margin-top:30px;
+  text-wrap:pretty}
 .ev__datos{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:48px;
   text-align:left;max-width:1400px}
 .ev__dato{padding-left:26px;border-left:4px solid var(--c-codea)}
